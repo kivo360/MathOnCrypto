@@ -1,0 +1,66 @@
+{
+  "contract_name": "OraclizeAddrResolver",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "getAddress",
+      "outputs": [
+        {
+          "name": "oaddr",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "addr",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newowner",
+          "type": "address"
+        }
+      ],
+      "name": "changeOwner",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newaddr",
+          "type": "address"
+        }
+      ],
+      "name": "setAddr",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000c57fe5b5b60018054600160a060020a03191633600160a060020a03161790555b5b610197806100396000396000f300606060405263ffffffff60e060020a60003504166338cc48318114610042578063767800de1461006e578063a6f9dae11461009a578063d1d80fdf146100b8575bfe5b341561004a57fe5b6100526100d6565b60408051600160a060020a039092168252519081900360200190f35b341561007657fe5b6100526100e6565b60408051600160a060020a039092168252519081900360200190f35b34156100a257fe5b6100b6600160a060020a03600435166100f5565b005b34156100c057fe5b6100b6600160a060020a0360043516610130565b005b600054600160a060020a03165b90565b600054600160a060020a031681565b60015433600160a060020a039081169116146101115760006000fd5b60018054600160a060020a031916600160a060020a0383161790555b50565b60015433600160a060020a0390811691161461014c5760006000fd5b60008054600160a060020a031916600160a060020a0383161790555b505600a165627a7a7230582066a21c99a9a8096f0525b7a3a9be1781b1abda9b491f2612669086c3fcfac3600029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1496944979056
+}
