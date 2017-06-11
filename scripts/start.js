@@ -66,7 +66,7 @@ function setupCompiler(host, port, protocol) {
   // "invalid" is short for "bundle invalidated", it doesn't imply any errors.
   compiler.plugin('invalid', function() {
     if (isInteractive) {
-      clearConsole();
+      // clearConsole();
     }
     console.log('Compiling...');
   });
@@ -77,7 +77,7 @@ function setupCompiler(host, port, protocol) {
   // Whether or not you have warnings or errors, you will get this event.
   compiler.plugin('done', function(stats) {
     if (isInteractive) {
-      clearConsole();
+      // clearConsole();
     }
 
     // We have switched off the default Webpack output in WebpackDevServer
@@ -299,17 +299,19 @@ function runDevServer(host, port, protocol) {
     }
 
     if (isInteractive) {
-        clearConsole();
-        addToStatus("http://" + host + ":" + port);
-        console.log();
+        // clearConsole();
+        botOnly("http://" + host + ":" + port);
+        
     }
     console.log(chalk.cyan('Starting the development server...'));
     console.log();
+    console.log(chalk.yellow('bot only mode'));
   });
 }
 
 function addToStatus(dappUrl) {
   var deviceIP = process.env.IP || 'localhost';
+  
   child.exec(
     "./node_modules/.bin/status-dev-cli add --dappUrl " + dappUrl + " --botUrl " + (dappUrl + BOT_SITE_PATH) + " --ip " + deviceIP,
     {stdio: "inherit"},
@@ -319,6 +321,21 @@ function addToStatus(dappUrl) {
     }
   );
 }
+
+function botOnly(dappUrl) {
+  var deviceIP = process.env.IP || 'localhost';
+  console.log("./node_modules/.bin/status-dev-cli add  " + " --botUrl " + (dappUrl + BOT_SITE_PATH) + " --ip " + deviceIP)
+  child.exec(
+    "./node_modules/.bin/status-dev-cli add  " + " --botUrl " + (dappUrl + BOT_SITE_PATH) + " --ip " + deviceIP,
+    {stdio: "inherit"},
+    function(error, stdout, stderr) {
+      devCliMessages.stdout = stdout;
+      devCliMessages.stderr = stderr;
+    }
+  );
+}
+
+// "./node_modules/.bin/status-dev-cli add  " + " --botUrl " + BOT_SITE_PATH + " --ip " + deviceIP,
 
 function run(port) {
   var protocol = process.env.HTTPS === 'true' ? "https" : "http";
@@ -336,7 +353,7 @@ detect(DEFAULT_PORT).then(port => {
   }
 
   if (isInteractive) {
-    clearConsole();
+    // clearConsole();
     var existingProcess = getProcessForPort(DEFAULT_PORT);
     var question =
       chalk.yellow('Something is already running on port ' + DEFAULT_PORT + '.' +
