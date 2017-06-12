@@ -12,4 +12,4 @@ http://45.55.58.81:8000/domath?coin1=ethereum&coin2=Augur&operator=-
   "bot-url":          "https://kivo360.github.io/MathOnCrypto/bot/bot.js"}
 ```
 
-[![Math On Crypto](http://i.imgur.com/Ot5DWAW.png)](https://youtu.be/1LESWJrQ840 "Doing Math On CryptoCurrencies")
+[![Math On Crypto](https://img.youtube.com/vi/1LESWJrQ840-Y/0.jpg)](https://youtu.be/1LESWJrQ840 "Doing Math On CryptoCurrencies")
